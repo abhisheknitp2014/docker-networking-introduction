@@ -139,9 +139,9 @@ Install curl (Alpine-based image) inside NGINX container:
 ```bash
 apk add curl 
 ```
-Test PostgreSQL connectivity (port 5432): 
+Test PostgreSQL connectivity (port 5432) (while inside NGINX container): 
 ```bash
-curl -v telnet://postgres_db:5432 (while inside NGINX container)
+curl -v telnet://postgres_db:5432 
 ```
  </details>
 
