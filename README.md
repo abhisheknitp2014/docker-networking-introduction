@@ -115,15 +115,15 @@ nginx:alpine
 
 From PostgreSQL to NGINX: 
 
-Access the PostgreSQL container: 
+Access the PostgreSQL container (now we are inside PostgreSQL container after execution): 
 ```bash
 docker exec -it postgres_db bash 
 ```
-Install curl (Debian-based image): 
+Install curl (Debian-based image) inside PostgreSQL container: 
 ```bash
 apt-get update && apt-get install -y curl 
 ```
-Test connectivity to NGINX using its service name: 
+Test connectivity to NGINX using its service name (while inside PostgreSQL container): 
 ```bash
 curl http://nginx_web 
 ```
@@ -131,17 +131,17 @@ curl http://nginx_web
 
 From NGINX to PostgreSQL: 
 
-Access the NGINX container: 
+Access the NGINX container (now we are inside NGINX container after execution): : 
 ```bash
 docker exec -it nginx_web sh 
 ```
-Install curl (Alpine-based image): 
+Install curl (Alpine-based image) inside NGINX container: 
 ```bash
 apk add curl 
 ```
 Test PostgreSQL connectivity (port 5432): 
 ```bash
-curl -v telnet://postgres_db:5432 
+curl -v telnet://postgres_db:5432 (while inside NGINX container)
 ```
  </details>
 
